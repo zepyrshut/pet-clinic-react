@@ -1,17 +1,22 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom/client';
+import WebFont from 'webfontloader';
+// Styles
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+// Components
+import { TopHeader } from './components/TopHeader';
+import RouterPetClinic from './router/RouterPetClinic';
+
+WebFont.load({
+  google: {
+    families: ['Amatic SC:400,700', 'Bebas Neue:400', 'Roboto:400,500,700'],
+  }
+});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <Fragment>
+    <TopHeader />
+    <RouterPetClinic />
+  </Fragment>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
