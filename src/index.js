@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom/client';
 import WebFont from 'webfontloader';
+import MainContent from './components/MainContent';
+
 // Styles
 import './index.css';
-// Components
-import { TopHeader } from './components/TopHeader';
-import RouterPetClinic from './router/RouterPetClinic';
+
 
 WebFont.load({
   google: {
@@ -15,8 +15,10 @@ WebFont.load({
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+
   <Fragment>
-    <TopHeader />
-    <RouterPetClinic />
+
+    <MainContent />
+
   </Fragment>
 );

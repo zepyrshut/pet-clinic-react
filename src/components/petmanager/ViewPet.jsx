@@ -1,6 +1,6 @@
-import React, { Component, Fragment } from 'react'
+import React, { Fragment } from 'react'
 
-export default class ViewPet extends Component {
+export class ViewPet extends React.Component {
 
     state = { pet: {} };
 

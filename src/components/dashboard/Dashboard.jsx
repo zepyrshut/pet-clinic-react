@@ -1,6 +1,6 @@
 import React from 'react'
 
-export class AddPet extends React.Component {
+export class Dashboard extends React.Component {
     render() {
         return (
             <div>añadir mascota</div>

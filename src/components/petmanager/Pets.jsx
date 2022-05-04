@@ -1,9 +1,9 @@
-import React, { Component, Fragment } from 'react'
+import React, { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import { faHourglass } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export default class Pets extends Component {
+export class Pets extends React.Component {
 
     state = {
         pets: [],

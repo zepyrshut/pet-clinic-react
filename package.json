@@ -1,5 +1,5 @@
 {
-  "name": "pet-clinic-front",
+  "name": "pet-clinic-react",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -14,7 +14,11 @@
     "@testing-library/react": "^13.1.1",
     "@testing-library/user-event": "^13.5.0",
     "babel-plugin-macros": "^3.1.0",
+    "bootstrap": "^5.1.3",
+    "bootstrap-icons": "^1.8.1",
+    "flowbite": "^1.4.5",
     "react": "^18.1.0",
+    "react-bootstrap": "^2.3.1",
     "react-dom": "^18.1.0",
     "react-icons": "^4.3.1",
     "react-router-dom": "^5.3.1",
