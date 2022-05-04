@@ -1,30 +1,63 @@
 import React, { Component, Fragment } from 'react'
+import { Link } from 'react-router-dom'
+import { faHourglass } from '@fortawesome/free-regular-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export default class Pets extends React.Component {
+export default class Pets extends Component {
 
-    state = { pets: [] };
+    state = {
+        pets: [],
+        isLoaded: false,
+    };
 
     componentDidMount() {
-        this.setState({
-            pets: [
-                { id: 1, name: 'Toby', type: 'dog', age: 10 },
-                { id: 2, name: 'Rufus', type: 'cat', age: 15 },
-                { id: 3, name: 'Molly', type: 'dog', age: 5 },
-            ]
-        });
+        fetch("http://localhost:8081/pets")
+            //.then((response) => response.json())
+            .then((response) => {
+                if (response.status !== 200) {
+                    let err = Error;
+                    err.message = "Invalid response code: " + response.status;
+                    this.setState({ error: err });
+                }
+                return response.json();
+            })
+            .then((json) => {
+                this.setState({
+                    pets: json.pets,
+                    isLoaded: true,
+
+                }, (error) => {
+                    this.setState({
+                        isLoaded: true,
+                        error
+                    })
+                })
+            })
     }
 
     render() {
-        return (
-            <Fragment>
-                <div>Mascotas</div>
 
-                <ul>
-                    {this.state.pets.map((pet) => (
-                        <li key={pet.id}>{pet.name}</li>
-                    ))}
-                </ul>
-            </Fragment>
-        )
+        const { pets, isLoaded, error } = this.state;
+
+        console.log(pets);
+        if (error) {
+            return <div>Error: {error.message}</div>;
+        } else if (!isLoaded) {
+            return <FontAwesomeIcon icon={faHourglass} spin />
+        } else {
+            return (
+                <Fragment>
+                    <div>Mascotas</div>
+
+                    <ul>
+                        {pets.map((pet) => (
+                            <li key={pet.id}>
+                                <Link to={`/pets/${pet.id}`}>{pet.pet_name}</Link>
+                            </li>
+                        ))}
+                    </ul>
+                </Fragment>
+            )
+        }
     }
 }

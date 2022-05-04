@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class AddPet extends React.Component {
+export default class AddPet extends Component {
     render() {
         return (
             <div>añadir mascota</div>
