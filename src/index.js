@@ -1,10 +1,11 @@
 import React, { Fragment } from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import WebFont from 'webfontloader';
 import MainContent from './components/MainContent';
 
 // Styles
 import './index.css';
+import 'flowbite';
 
 
 WebFont.load({
@@ -13,12 +14,11 @@ WebFont.load({
   }
 });
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-
+ReactDOM.render(
   <Fragment>
 
     <MainContent />
 
-  </Fragment>
-);
+
+  </Fragment>, document.getElementById('root'));
+
