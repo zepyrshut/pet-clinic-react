@@ -13,8 +13,9 @@ export const DarkModeToggler = () => {
       
         <span onClick={() => setTheme(colorTheme)}>
           {colorTheme === 'light' ?
-            <FontAwesomeIcon className="" icon={faSun} /> :
-            <FontAwesomeIcon className="" icon={faMoon} />}
+            <FontAwesomeIcon className="mr-2" icon={faSun} /> :
+            <FontAwesomeIcon className="mr-2" icon={faMoon} />}
+           {colorTheme === 'light' ? 'Cambiar a modo claro' : 'Cambiar a modo osucro'}
         </span>
    
 

@@ -47,7 +47,15 @@ export class Pets extends React.Component {
         } else {
             return (
                 <Fragment>
-                    <div>Mascotas</div>
+                    
+                        
+                            <div className="text-center text-white text-4xl bebas-neue py-7 rounded-md shadow-lg bg-gradient-to-r from-nature-soft-blue to-nature-dark-blue mb-3 dark:text-nature-dark-blue dark:from-nature-soft-sea-blue dark:to-nature-soft-blue transition-colors">Mascotas</div>
+                            
+           
+
+
+
+         
 
                     <ul>
                         {pets.map((pet) => (

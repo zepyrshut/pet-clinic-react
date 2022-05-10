@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPaw } from "@fortawesome/free-solid-svg-icons";
+import { faDog, faListCheck, faPaw, faPeopleRoof, faMessage } from "@fortawesome/free-solid-svg-icons";
 import React, { Fragment } from "react";
 import { DarkModeToggler } from "./DarkModeToggler";
 import { NavLink } from "react-router-dom";
@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 export const Navbar = () => {
     return (
         <Fragment>
-            <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 shadow-lg dark:bg-gray-800">
+            {/* <nav className="bg-white px-2 sm:px-4 py-2.5 shadow-lg border-b border-black dark:bg-gray-800 dark:shadow-lg dark:border-soft-lilac">
                 <div className="container flex flex-wrap justify-between items-center mx-auto">
                     <a href="https://flowbite.com" className="flex items-center">
                         <FontAwesomeIcon icon={faPaw} className="mr-2 text-blue-500 text-3xl dark:text-white" />
@@ -35,9 +35,24 @@ export const Navbar = () => {
                         </ul>
                     </div>
                 </div>
-            </nav>
+            </nav> */}
 
 
+            <div className="text-nature-black text-5xl dark:text-a-gray-medium">
+                <header className="py-3 text-center">
+                    <a href="#"> <FontAwesomeIcon icon={faPaw} className="mr-2" />
+                        <span className="amatic-sc font-bold">Dogtor</span></a>
+                </header>
+                <nav className="bebas-neue tracking-wider">
+                    <ul className="text-lg">
+                        <NavLink to="/pets"><li className="p-1 border-t border-nature-black dark:border-a-gray-medium"><FontAwesomeIcon icon={faDog} className=" mr-2" />Ver mascotas</li></NavLink>
+                        <a href="#"><li className="p-1 border-t border-nature-black dark:border-a-gray-medium"><FontAwesomeIcon icon={faListCheck} className=" mr-2" />Gestionar clínica</li></a>
+                        <a href="#"><li className="p-1 border-t border-nature-black dark:border-a-gray-medium"><FontAwesomeIcon icon={faPeopleRoof} className=" mr-2" />Sobre nosotros</li></a>
+                        <a href="#"><li className="p-1 border-t border-nature-black dark:border-a-gray-medium"><FontAwesomeIcon icon={faMessage} className=" mr-2" />Contacto</li></a>
+                        <a href="#"><li className="p-1 border-t border-b border-nature-black dark:border-a-gray-medium"><DarkModeToggler /></li></a>
+                    </ul>
+                </nav>
+            </div>
         </Fragment>
     )
 }
