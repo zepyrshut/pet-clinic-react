@@ -4,6 +4,9 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
     "./node_modules/flowbite/**/*.js",
   ],
+  plugins: [
+    require('@tailwindcss/forms'),
+  ],
   theme: {
     extend: {
       colors: {
